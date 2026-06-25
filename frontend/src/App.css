@@ -1,0 +1,30 @@
+/* App-specific styles. App.css is intentionally minimal; theming lives in index.css */
+.App {
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Code block styling */
+.code-block {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Markdown styling */
+.markdown h1 { font-size: 2em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; padding-bottom: 0.3em; border-bottom: 1px solid hsl(var(--border)); }
+.markdown h2 { font-size: 1.5em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; padding-bottom: 0.3em; border-bottom: 1px solid hsl(var(--border)); }
+.markdown h3 { font-size: 1.25em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; }
+.markdown p { margin-bottom: 1em; line-height: 1.6; }
+.markdown ul { list-style: disc; padding-left: 2em; margin-bottom: 1em; }
+.markdown li { margin-bottom: 0.25em; }
+.markdown code { background: hsl(var(--muted)); padding: 0.2em 0.4em; border-radius: 6px; font-size: 85%; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.markdown pre { background: hsl(var(--muted)); padding: 1em; border-radius: 6px; overflow-x: auto; margin-bottom: 1em; }
+.markdown pre code { background: transparent; padding: 0; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }

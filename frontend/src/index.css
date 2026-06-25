@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  :root {
+    /* Octopush Light - orange accent */
+    --background: 0 0% 100%;
+    --foreground: 215 14% 14%;
+    --card: 30 33% 98%;                  /* very light warm */
+    --card-foreground: 215 14% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 14% 14%;
+    --primary: 21 90% 48%;               /* deep orange #db5e0b */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 33% 96%;
+    --secondary-foreground: 215 14% 14%;
+    --muted: 30 25% 93%;
+    --muted-foreground: 215 14% 34%;
+    --accent: 30 33% 96%;
+    --accent-foreground: 215 14% 14%;
+    --destructive: 354 71% 49%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 18% 87%;
+    --input: 30 18% 87%;
+    --ring: 24 95% 53%;
+    --radius: 6px;
+
+    --gh-link: 24 95% 45%;               /* link orange */
+    --gh-success: 137 55% 41%;
+    --gh-header-bg: 0 0% 100%;
+    --brand: 24 95% 53%;                 /* #f97316 */
+    --brand-2: 17 88% 40%;               /* darker tentacle */
+  }
+
+  .dark {
+    /* Octopush Dark - deep navy + orange */
+    --background: 222 38% 6%;            /* near-black with hint of blue */
+    --foreground: 30 25% 90%;
+    --card: 222 30% 9%;
+    --card-foreground: 30 25% 90%;
+    --popover: 222 30% 9%;
+    --popover-foreground: 30 25% 90%;
+    --primary: 24 95% 53%;               /* #f97316 vibrant orange */
+    --primary-foreground: 222 38% 8%;
+    --secondary: 222 22% 14%;
+    --secondary-foreground: 30 25% 90%;
+    --muted: 222 22% 14%;
+    --muted-foreground: 218 11% 60%;
+    --accent: 222 22% 14%;
+    --accent-foreground: 30 25% 90%;
+    --destructive: 354 71% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 18% 20%;
+    --input: 222 18% 20%;
+    --ring: 24 95% 60%;
+
+    --gh-link: 24 95% 62%;
+    --gh-success: 137 55% 50%;
+    --gh-header-bg: 222 35% 7%;
+    --brand: 24 95% 53%;
+    --brand-2: 14 85% 45%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+  a.gh-link { color: hsl(var(--gh-link)); }
+  a.gh-link:hover { text-decoration: underline; }
+}
+
+.markdown h1 { font-size: 2em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; padding-bottom: 0.3em; border-bottom: 1px solid hsl(var(--border)); }
+.markdown h2 { font-size: 1.5em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; padding-bottom: 0.3em; border-bottom: 1px solid hsl(var(--border)); }
+.markdown h3 { font-size: 1.25em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; }
+.markdown p { margin-bottom: 1em; line-height: 1.6; }
+.markdown ul { list-style: disc; padding-left: 2em; margin-bottom: 1em; }
+.markdown li { margin-bottom: 0.25em; }
+.markdown code { background: hsl(var(--muted)); padding: 0.2em 0.4em; border-radius: 6px; font-size: 85%; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.markdown pre { background: hsl(var(--muted)); padding: 1em; border-radius: 6px; overflow-x: auto; margin-bottom: 1em; }
+.markdown pre code { background: transparent; padding: 0; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+
+@keyframes gh-fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.gh-fade-up { animation: gh-fade-up 0.35s ease-out both; }
+
+@keyframes tentacle-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.tentacle-pulse { animation: tentacle-pulse 3s ease-in-out infinite; }
