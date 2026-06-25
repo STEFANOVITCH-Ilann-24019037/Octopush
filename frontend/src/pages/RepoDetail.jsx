@@ -934,7 +934,8 @@ const RepoDetail = () => {
       setError(e?.response?.status === 404 ? 'Repository not found' : 'Failed to load');
     } finally { setLoading(false); }
   };
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [username, repoName]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { load(); }, [username, repoName]);
 
   const isOwner = user && repo && repo.owner === user.username;
 

@@ -42,7 +42,8 @@ const Profile = () => {
     } finally { setLoading(false); }
   };
 
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [username]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { load(); }, [username]);
 
   const isMe = me && profile && me.id === profile.id;
 
